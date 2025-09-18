@@ -1,8 +1,5 @@
 module.exports = {
-  HOST: "cocemasov",
-  PASSW: "andys",
-  DBNAME: "andysdb"
+  HOST: process.env.MONGO_USER,
+  PASSW: process.env.MONGO_PASS,
+  DBNAME: process.env.MONGO_DBNAME
 };
-
-
-

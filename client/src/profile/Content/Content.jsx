@@ -6,7 +6,6 @@ import i18n from "../../i18n/i18n";
 import addLangToPath from "../../utils/addLangToPath";
 
 import { getProducts } from "../../redux/getServerData/actions/getProducts.action";
-// import { getCurrentProduct } from "../../redux/getServerData/actions/getCurrentProduct.action";
 
 import Product from "../../components/Product/Product";
 
@@ -38,9 +37,6 @@ export const Content = () => {
   const selectProducts = (state) => state.products;
   const products = useSelector(selectProducts);
 
-  // const selectCurrentProduct = (state) => state.currentProduct;
-  // const currentProduct = useSelector(selectCurrentProduct);
-
   const [currentProduct, setCurrentProduct] = useState([]);
 
   useEffect(() => {
@@ -52,14 +48,8 @@ export const Content = () => {
       setCurrentProduct(
         products.payload.filter((product) => product.title === productPath)
       );
-      // console.log(currentProduct);
-      // console.log(products);
     }
   }, [productPath, products, products.ready]);
-
-  // useEffect(() => {
-  //   productPath && dispatch(getCurrentProduct(productPath));
-  // }, [productPath, dispatch]);
 
   return (
     <div className="content bg-[#1b1a1b]">
@@ -81,27 +71,6 @@ export const Content = () => {
       )}
     </div>
   );
-
-  // return (
-  //   <div className="content bg-[#1b1a1b]">
-  //     {currentProduct && currentProduct.ready && id ? (
-  //       <div className="product bg-[#1b1a1b] first-of-type:pt-40">
-  //         <Product product={currentProduct.payload} />
-  //       </div>
-  //     ) : (
-  //       products &&
-  //       products.ready &&
-  //       products.payload.map((product) => (
-  //         <div
-  //           key={product._id}
-  //           className={`product bg-[#1b1a1b] first-of-type:pt-${productsTopPad}`}
-  //         >
-  //           <Product product={product} />
-  //         </div>
-  //       ))
-  //     )}
-  //   </div>
-  // );
 };
 
 export default Content;

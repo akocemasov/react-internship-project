@@ -10,7 +10,6 @@ const initialState = {
 const updateCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case TO_CART:
-      //      console.log("TO_CART=", action.payload);
       return {
         ...state,
         payload: action.payload,

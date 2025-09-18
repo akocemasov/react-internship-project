@@ -21,10 +21,6 @@ export const Cart = (props) => {
   const selectLogin = (state) => state.login;
   const login = useSelector(selectLogin);
 
-  // useEffect(() => {
-  //   console.log("cart.products=", cart.products)
-  // }, [cart.products]);
-
   useEffect(() => {
     if (login.exist) {
       dispatch(

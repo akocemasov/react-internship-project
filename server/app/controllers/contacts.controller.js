@@ -1,5 +1,4 @@
 const db = require("../models");
-//const dbConfig = require("../config/db.config");
 const Contacts = db.contacts;
 
 exports.postContacts = (req, res) => {

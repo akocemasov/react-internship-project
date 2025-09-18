@@ -8,7 +8,6 @@ const Navlist = mongoose.model(
     subMenu: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        // type: mongoose.Schema.Types.Object,
         ref: "NavlistSub",
       },
     ],

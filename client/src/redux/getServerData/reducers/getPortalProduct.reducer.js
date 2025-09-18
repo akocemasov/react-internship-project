@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const getPortalProductReducer = (state = initialState, action) => {
-  // console.log(state);
   switch (action.type) {
     case GET_PORTAL_PRODUCT:
       return {

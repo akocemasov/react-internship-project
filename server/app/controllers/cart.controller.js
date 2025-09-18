@@ -21,7 +21,6 @@ exports.postCart = (req, res) => {
               res.status(500).send({ err: true, message: err });
               return;
             }
-            // console.log(products);
             res.status(200).send({ err: false, message: products });  // send full products
           }
         );
@@ -29,23 +28,6 @@ exports.postCart = (req, res) => {
     });
   }
 };
-
-// exports.getCart = (req, res) => {
-//   const query = { userId: req.body.userId };
-//   UserCart.findOne(query)
-//     .populate("products", "-__v")
-//     .exec()
-//     .then((json) => {
-//       if (json) {
-//         res.status(200).send(json);
-//       } else {
-//         res.status(404).send({ message: "UserCart not found." });
-//       }
-//     })
-//     .catch((err) => {
-//       res.status(500).send({ message: err });
-//     });
-// };
 
 exports.deleteCart = (req, res) => {
   if (req.body.userId) {
@@ -60,7 +42,6 @@ exports.deleteCart = (req, res) => {
           res.status(500).send({ err: true, message: err });
           return;
         }
-        // console.log(json);
         res.status(200).send({ err: false, message: json });
       });
     });

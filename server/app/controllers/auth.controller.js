@@ -9,8 +9,6 @@ var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
-  // console.log("User trying to signup: ", req.body);
-
   const user = new User({
     username: req.body.username,
     email: req.body.email,
@@ -22,24 +20,6 @@ exports.signup = (req, res) => {
       res.status(500).send({ err: true, message: err });
       return;
     }
-
-    // if (req.body.cart) {
-    // const names = req.body.cart.map(e => e);
-    // const cart = await UserProducts.find({ '_id': { $in: req.body.cart } });
-    // if (!req.body.cart.id) {
-    //   const userCart = new UserCart({
-    //     userId: user._id,
-    //     products: cart.map(box => box._id)
-    //   });
-    //   user.cart = userCart._id;
-    //   userCart.save(err => {
-    //     if (err) {
-    //       res.status(500).send({ message: err });
-    //       return;
-    //     }
-    //   });
-    // }
-    // }
 
     if (req.body.roles) {
       Role.find(
@@ -104,10 +84,7 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
-  //  console.log("User trying to signin: ", req.body);
-
   if (!req.body || !req.body.username || !req.body.password) {
-    // console.log("user not found");
     res.status(404).send({ err: true, message: "Failed! Fill the form." });
     return;
   }
@@ -119,8 +96,6 @@ exports.signin = (req, res) => {
     .populate("cart", "-__v")
     .exec()
     .then((user) => {
-      // console.log("user=", user);
-
       if (!user) {
         console.log("user not found");
         res
@@ -132,7 +107,6 @@ exports.signin = (req, res) => {
       const emailIsValid = req.body.email === user.email ? true : false;
 
       if (!emailIsValid) {
-        // console.log("invalid password");
         res.status(401).send({ err: true, message: "Failed! Invalid Email." });
         return;
       }
@@ -143,7 +117,6 @@ exports.signin = (req, res) => {
       );
 
       if (!passwordIsValid) {
-        // console.log("invalid password");
         res
           .status(401)
           .send({ err: true, message: "Failed! Invalid Password." });
@@ -160,25 +133,12 @@ exports.signin = (req, res) => {
         authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
       }
 
-      // res.status(200).send({
-      //   err: false,
-      //   message: {
-      //     id: user._id,
-      //     username: user.username,
-      //     email: user.email,
-      //     roles: authorities,
-      //     accessToken: token,
-      //   },
-      // });
-
       UserCart.findOne({ userId: user._id })
-        // .populate("products", "-__v")
         .exec((err, json) => {
           if (err) {
             res.status(500).send({ err: true, message: err });
             return;
           }
-//          console.log("cart=", json);
           res.status(200).send({
             err: false,
             message: {
@@ -191,11 +151,8 @@ exports.signin = (req, res) => {
             },
           });
         });
-
-//      console.log("User signed in: ", user.username);
     })
     .catch((err) => {
-      console.log("err=", err);
       res.status(500).send({ err: true, message: err });
     });
 };

@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const getCurrentProductReducer = (state = initialState, action) => {
-  // console.log(state);
   switch (action.type) {
     case GET_CURRENT_PRODUCT:
       return {

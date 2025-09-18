@@ -1,0 +1,16 @@
+{
+  "name": "react-internship-app",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build:client": "npm run build --prefix client",
+    "build:server": "echo 'No build step for server'",
+    "build": "npm run build:client && npm run build:server",
+    "start": "concurrently \"npm start --prefix server\" \"serve -s client/build\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "serve": "^14.2.0"
+  }
+}

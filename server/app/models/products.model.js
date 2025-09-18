@@ -1,16 +1,5 @@
 const mongoose = require("mongoose");
 
-// const Products = mongoose.model(
-//   "Products",
-//   new mongoose.Schema({
-//     type: String,
-//     src: String,
-//     title: String,
-//     price: Number,
-//     currency: String,
-//   })
-// );
-
 const Products = mongoose.model(
   "Products",
   new mongoose.Schema({

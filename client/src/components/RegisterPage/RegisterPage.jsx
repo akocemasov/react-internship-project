@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  /*Link,*/ useNavigate,
+  useNavigate,
   useParams,
   useLocation,
 } from "react-router-dom";
@@ -72,8 +72,6 @@ export const RegisterPage = () => {
   };
 
   useEffect(() => {
-    console.log("user=", user);
-
     if (!user || !user.ready) return;
 
     if (user.payload.err) {
@@ -123,7 +121,6 @@ export const RegisterPage = () => {
             onChange={handleOnChange}
           ></input>
           <div className="w-full border-b-2 border-neutral-700"></div>
-          {/* <Link to={addLangToPath("register")} className=""> */}
           <button
             type="submit"
             className="w-full px-6 py-3 border border-neutral-600 text-white text-sm font-medium bg-black hover:bg-neutral-800 uppercase rounded"
@@ -131,7 +128,6 @@ export const RegisterPage = () => {
           >
             {t("Register")}
           </button>
-          {/* </Link> */}
         </form>
       </div>
     </div>

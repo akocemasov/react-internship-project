@@ -63,7 +63,6 @@ export const LoginPage = () => {
 
   useEffect(() => {
     if (!user || !user.ready) return;
-    // console.log("user.payload=", user.payload);
 
     if (user.payload.err) {
       dispatch(signOut());

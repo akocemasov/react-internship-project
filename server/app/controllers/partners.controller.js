@@ -1,5 +1,4 @@
 const db = require("../models");
-const dbConfig = require("../config/db.config");
 const Partners = db.partners;
 
 exports.postPartners = (req, res) => {

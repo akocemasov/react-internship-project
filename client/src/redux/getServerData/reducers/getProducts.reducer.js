@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const getProductsReducer = (state = initialState, action) => {
-  // console.log(state);
   switch (action.type) {
     case GET_PRODUCTS:
       return {

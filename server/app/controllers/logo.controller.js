@@ -1,5 +1,4 @@
 const db = require("../models");
-const dbConfig = require("../config/db.config");
 const Logo = db.logo;
 
 exports.postLogo = (req, res) => {

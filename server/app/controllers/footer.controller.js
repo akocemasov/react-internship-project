@@ -1,5 +1,4 @@
 const db = require("../models");
-const dbConfig = require("../config/db.config");
 const Footer = db.footer;
 
 exports.postFooter = (req, res) => {

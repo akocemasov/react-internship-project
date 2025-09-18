@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const getTopSliderReducer = (state = initialState, action) => {
-  // console.log(state);
   switch (action.type) {
     case GET_TOP_SLIDER:
       return {

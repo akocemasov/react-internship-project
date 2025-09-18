@@ -1,8 +1,7 @@
 import "./App.css";
 
-import React, { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 import routes from "./routes/routes";
 import RenderRoutes from "./components/RenderRoutes/RenderRoutes";
@@ -15,13 +14,6 @@ const Footer = lazy(() => import("./profile/Footer/Footer"));
 const SliderIntro = lazy(() => import("./components/SliderIntro/SliderIntro"));
 
 function App() {
-
-  // debug
-  const selectState = (state) => state;
-  const state = useSelector(selectState);
-  useEffect(() => {
-  //  console.log(state.products);
-  }, [state.products]);
 
   return (
     <BrowserRouter>

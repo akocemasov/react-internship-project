@@ -1,3 +1,3 @@
 module.exports = {
-  secret: "postman-key"
+  secret: process.env.AUTH_JWT_SECRET
 };
