@@ -31,7 +31,7 @@ npm run install:all
 npm run dev
 ```
 * App will be available at [http://localhost:3000](http://localhost:3000).
-* Server runs on [http://localhost:4000](http://localhost:4000).
+* Server runs on [http://localhost:3001](http://localhost:3001).
 
 ### 4. Build & Run production
 

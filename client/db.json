@@ -1,6 +1,6 @@
 {
   "logo": {
-    "src": "https://www.andys.md/assets/img/logo.svg",
+    "src": "https://www.andys.md/app/img/logo.svg",
     "alt": "logo",
     "href": ""
   },
@@ -47,19 +47,19 @@
       "data": [
         {
           "id": 1,
-          "src": "https://www.andys.md/assets/img/brands/LaPlacinte.svg",
+          "src": "https://www.andys.md/app/img/brands/LaPlacinte.svg",
           "alt": "LaPlacinte",
           "href": "https://laplacinte.md/"
         },
         {
           "id": 2,
-          "src": "https://www.andys.md/assets/img/brands/CiaoCacao.svg",
+          "src": "https://www.andys.md/app/img/brands/CiaoCacao.svg",
           "alt": "CiaoCacao",
           "href": "https://ciaocacao.md/"
         },
         {
           "id": 3,
-          "src": "https://www.andys.md/assets/img/brands/Gustland.png",
+          "src": "https://www.andys.md/app/img/brands/Gustland.png",
           "alt": "Gustland",
           "href": "https://gustland.md/"
         }

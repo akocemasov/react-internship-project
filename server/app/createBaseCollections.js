@@ -10,7 +10,7 @@ const {
   productsSub,
   footer,
   footerSub,
-} = require("./constants");
+} = require("./constants").default;
 const Role = db.role;
 const Logo = db.logo;
 const Contacts = db.contacts;

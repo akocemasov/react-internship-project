@@ -28,7 +28,7 @@ export const EmailForm = () => {
         </div>
       </form>
       <div className="flex text-white">
-        <img src="https://www.andys.md/assets/img/pays.png" alt="pays"></img>
+        <img src="/assets/logos/payments.svg" alt="payments" className="w-24 h-auto"></img>
         <a href="https://www.facebook.com/andysclubmd/">
           {/* TODO: insert facebook svg */}
         </a>
